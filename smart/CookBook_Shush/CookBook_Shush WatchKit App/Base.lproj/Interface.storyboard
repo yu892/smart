@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="19455" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch44"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="19454"/>
+    </dependencies>
+    <scenes>
+        <!--Table RecipesIC-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="TableRecipesIC" customModule="CookBook_Zagorodny_Zyablkov_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <imageView width="110" height="110" alignment="center" verticalAlignment="center" image="logo" id="jd2-dx-3MJ"/>
+                        <label alignment="center" verticalAlignment="center" text="CookBook" id="6od-Xx-pgM">
+                            <fontDescription key="font" style="UICTFontTextStyleTitle2"/>
+                        </label>
+                    </items>
+                    <connections>
+                        <segue destination="Fb4-sK-ved" kind="relationship" relationship="nextPage" id="fk9-5E-BqW"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="219.52173913043478" y="344.55357142857144"/>
+        </scene>
+        <!--Table RecipesIC-->
+        <scene sceneID="ccH-kG-Iet">
+            <objects>
+                <controller id="Fb4-sK-ved" customClass="TableRecipesIC" customModule="CookBook_Zagorodny_Zyablkov_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="bCU-1i-Buy">
+                            <items>
+                                <tableRow id="w9p-Rk-1wY" customClass="tableRow">
+                                    <group key="rootItem" width="1" alignment="left" id="h95-cz-cGI">
+                                        <items>
+                                            <imageView width="30" height="30" alignment="left" verticalAlignment="center" image="swift" catalog="system" id="diy-cy-9kq">
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </imageView>
+                                            <label alignment="left" verticalAlignment="center" text="RecName" id="nYg-TT-mil"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="rowPicture" destination="nYg-TT-mil" id="Jys-X2-MAG"/>
+                                        <segue destination="CIL-uY-vBP" kind="push" id="pPb-Gi-F7o"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="bCU-1i-Buy" id="nkq-FY-itK"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="418" y="345"/>
+        </scene>
+        <!--Detail RecipeIC-->
+        <scene sceneID="EoX-Ls-0OF">
+            <objects>
+                <controller id="CIL-uY-vBP" customClass="DetailRecipeIC" customModule="CookBook_Zagorodny_Zyablkov_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" verticalAlignment="center" text="Описание:" id="Q1C-YS-Qpa"/>
+                        <button alignment="center" verticalAlignment="center" id="G2F-ly-DvE">
+                            <group key="contentGroup" width="1" alignment="left" id="lAk-JV-nb8">
+                                <items>
+                                    <label alignment="left" verticalAlignment="center" text="recipeText" id="0C6-nd-vdJ"/>
+                                </items>
+                            </group>
+                            <connections>
+                                <segue destination="Ckr-MN-uMQ" kind="modal" id="KeO-XT-l0X"/>
+                            </connections>
+                        </button>
+                        <slider width="1" alignment="left" verticalAlignment="center" maximum="0.0" steps="5" minimumImage="star" catalog="system" maximumImage="star.fill" id="qLk-nN-NYp">
+                            <color key="color" red="0.97254901960784312" green="0.70196078431372544" blue="0.011764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                        </slider>
+                        <label width="62" alignment="center" text="Ic name" id="bVC-DZ-IQL"/>
+                        <label width="56" height="19" alignment="left" text="Автор" id="TaH-SV-eGw"/>
+                        <group width="1" alignment="left" id="ToY-JY-MAC">
+                            <items>
+                                <label width="94" alignment="left" verticalAlignment="center" text="authorName" id="ulT-9q-9KS"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="authorRecipe" destination="bVC-DZ-IQL" id="pAe-6O-vqL"/>
+                        <outlet property="imageRecipe" destination="bVC-DZ-IQL" id="qz6-M4-4ud"/>
+                        <outlet property="nameRecipe" destination="bVC-DZ-IQL" id="08H-VF-8e3"/>
+                        <outlet property="ratingRecipe" destination="qLk-nN-NYp" id="z9w-Dt-qgp"/>
+                        <outlet property="textRecipe" destination="bVC-DZ-IQL" id="9OE-jK-zX9"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="549.91304347826087" y="587.41071428571433"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="qtV-OU-o8v">
+            <objects>
+                <controller id="Ckr-MN-uMQ">
+                    <items>
+                        <label width="1" alignment="left" text="recipeText" textAlignment="justified" numberOfLines="0" id="yym-l4-Zma"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="749" y="597"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="logo" width="96" height="96"/>
+        <image name="star" catalog="system" width="128" height="115"/>
+        <image name="star.fill" catalog="system" width="128" height="115"/>
+        <image name="swift" catalog="system" width="128" height="112"/>
+    </resources>
+</document>
